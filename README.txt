@@ -14,7 +14,7 @@ MultiStackReg: http://bradbusse.net/downloads.html
 For Matlab::
 Cyt package: https://www.c2b2.columbia.edu/danapeerlab/html/cyt-download.html
 
-Step 0:  Rearrange your image files (rpcnl files) to one folder, and rename file to Cycle0.rpcnl…CycleX.rpcnl (Alternatively use the Matlab rename script we provided 0_CycIF_rename_rcpnl.m).
+Step 0:  Rearrange your image files (rpcnl files) to one folder, and rename file to Cycle0.rpcnl…CycleX.rpcnl, or use the Matlab rename script we provided (CycIF_rename_rcpnl.m).
 
 Step 1: Save induvial frame from different cycles:  Run ImageJ macro 1_Macro-SAVEALLCYCLES.ijm. 
 
