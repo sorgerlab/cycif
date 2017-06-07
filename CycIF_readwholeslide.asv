@@ -18,8 +18,8 @@ int_cut = input('Hoechst Intensity cutoff(suggested 1000)=');
 
 alldata =table;
 totalframe = rows*cols; %%rows*cols;
-
-%% Create labels for each channels
+%%eachdata = cell(totalframe);
+chs =28;
 if ~exist('labels','var')
     cy = chs /4;
     flag =1;
@@ -30,10 +30,10 @@ if ~exist('labels','var')
             flag = flag+1;
         end
     end
-    labels = horzcat(labels,{'AREA','CIRC','X','Y'});
 end
 
-%% read data files
+labels = {labels,'AREA','CIRC','X','Y'};
+
 for i=1:totalframe;
   filename = strcat(myDIR,'\Results-',myName,'-',num2str(i),'.csv');
   if exist(filename,'file')
@@ -64,5 +64,5 @@ end
 
 myName = strrep(myName,'-','');
 eval(strcat('DATA',myName,'=alldata;'));
-clear alldata;
+eval('clear alldata');
 
