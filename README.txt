@@ -22,7 +22,7 @@ Step 2: Registration:  Run ImageJ macro 2_Macro-imagereg-forRareCyte.ijm.
 
 Step 3: Segmentation & quantification: Run ImageJ macro 3_Macro-CycIF-wholeSlidequan.ijm
 
-Step 4: Import data files to Matlab:  Generate a cell array with labels for each channels (plus four additional readings: 'AREA', 'CIRC', 'X','Y'.   Then run Matlab script 4_CycIF_readwholeslide.m
+Step 4: Import data files to Matlab:  Generate a cell array with labels for each channels (plus four additional readings: 'AREA', 'CIRC', 'X','Y'.   Then run Matlab script CycIF_readwholeslide.m
 
 Step 5. Using "writetable" function to generate CSV files, then you can import & analyze in CYT package. 
     
