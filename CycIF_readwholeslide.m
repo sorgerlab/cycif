@@ -1,7 +1,8 @@
 %% Read whole slides (from ImageJ data)
 %  required the variables :: labels
+%  v1: 2017/03/06  Jerry Lin
 %  v4: require user inputs (name, cols, rows,chs); rename alldata;
-%  Jerry Lin 2017/03/06
+%  v5: fix bugs & updates : 2017/08/16
 
 
 %% Initialization
@@ -11,10 +12,11 @@
 myDIR = uigetdir('D:\TRIPLET');
 
 myName = input('Please input file name:','s');
-cols = input('Columns=');
-rows = input('Rows=');
-chs = input('Channels=');
-int_cut = input('Hoechst Intensity cutoff(suggested 1000)=');
+cols = input('Columns:');
+rows = input('Rows:');
+chs = input('Channels:');
+int_cut = input('Hoechst Intensity cutoff(suggested 1000):');
+mag = input('Please input magnefication(1=10x, 4=40x):');
 
 alldata =table;
 totalframe = rows*cols; %%rows*cols;
@@ -34,7 +36,7 @@ if ~exist('labels','var')
 end
 
 %% read data files
-for i=1:totalframe;
+for i=1:totalframe
   filename = strcat(myDIR,'\Results-',myName,'-',num2str(i),'.csv');
   if exist(filename,'file')
     temp1 = array2table(CycIF_readtable(chs,filename),'VariableNames',labels);
@@ -46,12 +48,12 @@ for i=1:totalframe;
     
     temp1.COL = repmat(c,length(temp1.X),1);
     temp1.ROW = repmat(r,length(temp1.X),1);
-    temp1.Xt = temp1.X + (c-1)* (1664);
+    temp1.Xt = temp1.X + (c-1)* (1664/mag);
     
-    temp1.Yt = temp1.Y + (r-1)* 1404;
+    temp1.Yt = temp1.Y + (r-1)* (1404/mag);
     
     
-    if isempty(alldata);
+    if isempty(alldata)
         alldata = temp1;
         %%eachdata{i} = temp1;
     else
