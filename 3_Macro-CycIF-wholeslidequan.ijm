@@ -16,6 +16,7 @@ startimg= getNumber("Enter starting image:",1);
 totalimage = getNumber("Enter number of images:",238);
 channels=getNumber("Enter number of channels:",40);
 maskch = getNumber("Enter cycle for mask:",7);
+ensize = getNumber("Enter size for enlarge ROIs(3 for 10x and 6 for 40x images):",3);
 
 //myName = getTitle;
 
@@ -64,7 +65,7 @@ run("Out [-]");
 counts=roiManager("count");
 for(i=0; i<counts; i++) {
     roiManager("Select", i);
-    run("Enlarge...", "enlarge=3 pixel");
+    run("Enlarge...", "enlarge="+ensize+" pixel");
     roiManager("Update");
 }
 
