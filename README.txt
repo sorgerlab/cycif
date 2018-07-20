@@ -40,4 +40,11 @@ Step 4: Import data files to Matlab:  Generate a cell array with labels for each
 
 Step 5. Using "writetable" function to generate CSV files, then you can import & analyze in CYT package. 
     
+---------------------------------------------------------------------------------------------------------------------------
+Sample images:
 
+A set of t-CyCIF sample images could be found here:
+
+https://www.dropbox.com/sh/fhn8qbow3qk2lc1/AABOIbSk7JoshSukS33HB1cQa?dl=0
+
+8-cycle CyCIF experiment was done with a Breast xenograft sample.  Each rcpnl file contains 7x6 grids with 4-ch images.  
