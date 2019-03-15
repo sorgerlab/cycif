@@ -136,7 +136,7 @@ end
         channels(i+3) = {'X'};
         allchs(:,i+3) = welldata_nuc{r,c}.X(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
         channels(i+4) = {'Y'};
-        allchs(:,i+4) = welldata_nuc{r,c}.X(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
+        allchs(:,i+4) = welldata_nuc{r,c}.Y(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
         channels(i+5) = {'Field'};
         allchs(:,i+5) = welldata_nuc{r,c}.Field(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
 
@@ -244,7 +244,7 @@ end
         channels(i+3) = {'X'};
         allchs(:,i+3) = welldata_nuc{r,c}.X(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
         channels(i+4) = {'Y'};
-        allchs(:,i+4) = welldata_nuc{r,c}.X(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
+        allchs(:,i+4) = welldata_nuc{r,c}.Y(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
         channels(i+5) = {'Field'};
         allchs(:,i+5) = welldata_nuc{r,c}.Field(strcmp(welldata_nuc{r,c}.Channel,channels{1}));
 
